@@ -6,7 +6,7 @@ import Header from './Header';
 import BouncingArrow from './BouncingArrow';
 import PortfolioCard from './PortfolioCard';
 
-const PortfolioHero = ({ onCardHoverChange }) => {
+const PortfolioHero = ({ onCardHoverChange, onAboutClick }) => {
   const cardRowVariants = {
     initial: {},
     animate: {
@@ -17,7 +17,11 @@ const PortfolioHero = ({ onCardHoverChange }) => {
   };
 
   const handleCardClick = (section) => {
-    alert(`${section} — coming soon!`);
+    if (section === 'About Me' && onAboutClick) {
+      onAboutClick();
+    } else {
+      alert(`${section} — coming soon!`);
+    }
   };
 
   return (
@@ -106,9 +110,6 @@ const PortfolioHero = ({ onCardHoverChange }) => {
           />
         </motion.div>
       </main>
-
-      <BouncingArrow delay={0.3} />
-      <ColorStrip reverse={true} />
     </>
   );
 };

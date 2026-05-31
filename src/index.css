@@ -12,6 +12,22 @@ body {
 }
 
 /* Ensure default cursor is hidden on interactive elements as well */
-a, button, select, input, textarea, [role="button"], .portfolio-card {
+a, button, select, input, textarea, [role="button"], .portfolio-card, .flip-cell, .clink, .inst {
   cursor: none !important;
 }
+
+/* Card Flip 3D classes */
+.perspective-900 {
+  perspective: 900px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+

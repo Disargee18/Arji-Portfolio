@@ -93,7 +93,7 @@ const Credentials = ({ onBackClick, onHoverChange }) => {
   return (
     <section
       id="credentials-section"
-      className="w-full min-h-screen border-t-[3px] border-b-[3px] border-black dark:border-tonedwhite flex flex-col bg-[#F2F0EA] dark:bg-[#2B2B2B] select-none justify-between"
+      className="w-full min-h-screen border-t-[3px] border-black dark:border-tonedwhite flex flex-col bg-[#F2F0EA] dark:bg-[#2B2B2B] select-none justify-between"
     >
 
 
@@ -199,12 +199,6 @@ const Credentials = ({ onBackClick, onHoverChange }) => {
         </div>
       </div>
 
-      {/* Bottom Color Strip */}
-      <div className="flex h-4 w-full border-t-[3px] border-black dark:border-tonedwhite divide-x-[3px] divide-black dark:divide-tonedwhite select-none">
-        <div className="flex-1 bg-[#FF3B30]" />
-        <div className="flex-1 bg-[#FFD600]" />
-        <div className="flex-1 bg-[#1E4DFF]" />
-      </div>
     </section>
   );
 };

@@ -5,6 +5,7 @@ import PortfolioHero from './components/PortfolioHero';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Credentials from './components/Credentials';
+import Contact from './components/Contact';
 
 function App() {
   const [isHoveredOverCard, setIsHoveredOverCard] = useState(false);
@@ -34,7 +35,8 @@ function App() {
       const sections = [
         { id: 'about-me-section', label: '01 — ABOUT ME' },
         { id: 'projects-section', label: '02 — PROJECTS' },
-        { id: 'credentials-section', label: '03 — CREDENTIALS' }
+        { id: 'credentials-section', label: '03 — CREDENTIALS' },
+        { id: 'contact-section', label: '04 — CONTACT' }
       ];
 
       let active = '01 — ABOUT ME';
@@ -75,6 +77,10 @@ function App() {
 
   const scrollToCredentials = () => {
     document.getElementById('credentials-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToHome = () => {
@@ -142,6 +148,11 @@ function App() {
       {/* Credentials Section Panel */}
       <div className="w-full mt-0 pb-0">
         <Credentials onBackClick={scrollToHome} onHoverChange={setIsHoveredOverCard} />
+      </div>
+
+      {/* Contact Section Panel */}
+      <div className="w-full mt-0 pb-0">
+        <Contact onHoverChange={setIsHoveredOverCard} />
       </div>
     </motion.div>
   );

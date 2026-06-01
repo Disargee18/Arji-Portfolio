@@ -10,14 +10,14 @@ const CustomCursor = ({ mouseX, mouseY, isHoveredOverCard }) => {
     default: {
       width: 18,
       height: 18,
-      backgroundColor: '#000000',
+      backgroundColor: 'var(--cursor-bg)',
       border: '0px solid transparent',
     },
     big: {
       width: 48,
       height: 48,
       backgroundColor: 'transparent',
-      border: '3px solid #000000',
+      border: '3px solid var(--cursor-border)',
     }
   };
 

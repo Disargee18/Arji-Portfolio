@@ -72,11 +72,11 @@ const PortfolioCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
-      className="portfolio-card flex-1 min-h-[340px] border-4 border-black relative overflow-hidden flex flex-col items-center justify-center select-none"
+      className="portfolio-card flex-1 min-h-[340px] border-4 border-black dark:border-tonedwhite relative overflow-hidden flex flex-col items-center justify-center select-none"
       style={{ backgroundColor: bgColor }}
     >
       <motion.div
-        className={`absolute rounded-full border-4 ${circleBorderColor} pointer-events-none`}
+        className={`absolute rounded-full border-4 ${circleBorderColor} dark:border-tonedwhite/20 pointer-events-none`}
         style={circleStyle}
         animate={{
           rotate: isHovered ? 45 : 0,

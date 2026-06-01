@@ -6,7 +6,7 @@ import Header from './Header';
 import BouncingArrow from './BouncingArrow';
 import PortfolioCard from './PortfolioCard';
 
-const PortfolioHero = ({ onCardHoverChange, onAboutClick }) => {
+const PortfolioHero = ({ onCardHoverChange, onAboutClick, onProjectsClick, onCredentialsClick }) => {
   const cardRowVariants = {
     initial: {},
     animate: {
@@ -19,8 +19,10 @@ const PortfolioHero = ({ onCardHoverChange, onAboutClick }) => {
   const handleCardClick = (section) => {
     if (section === 'About Me' && onAboutClick) {
       onAboutClick();
-    } else {
-      alert(`${section} — coming soon!`);
+    } else if (section === 'Projects' && onProjectsClick) {
+      onProjectsClick();
+    } else if (section === 'Credentials' && onCredentialsClick) {
+      onCredentialsClick();
     }
   };
 
@@ -54,8 +56,8 @@ const PortfolioHero = ({ onCardHoverChange, onAboutClick }) => {
             arrowColor="text-black"
             accents={
               <>
-                <div className="absolute bottom-[14px] left-[14px] w-[18px] h-[18px] bg-black rounded-full pointer-events-none" />
-                <div className="absolute top-[14px] right-[14px] w-[14px] h-[14px] bg-black opacity-20 pointer-events-none" />
+                <div className="absolute bottom-[14px] left-[14px] w-[18px] h-[18px] bg-black dark:bg-tonedwhite rounded-full pointer-events-none" />
+                <div className="absolute top-[14px] right-[14px] w-[14px] h-[14px] bg-black dark:bg-tonedwhite opacity-20 pointer-events-none" />
               </>
             }
           />

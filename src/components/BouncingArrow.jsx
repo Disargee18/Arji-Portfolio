@@ -12,7 +12,7 @@ const BouncingArrow = ({ delay = 0 }) => {
           ease: 'easeInOut',
           delay: delay,
         }}
-        className="inline-block text-4xl font-bold text-black select-none pointer-events-none"
+        className="inline-block text-4xl font-bold text-black dark:text-tonedwhite select-none pointer-events-none"
       >
         ↓
       </motion.span>

@@ -5,7 +5,7 @@ const ColorStrip = ({ reverse = false }) => {
   const displayColors = reverse ? [...colors].reverse() : colors;
 
   return (
-    <div className="flex h-2.5 w-full select-none">
+    <div className="flex h-4 w-full border-b-[3px] border-black dark:border-tonedwhite divide-x-[3px] divide-black dark:divide-tonedwhite select-none">
       {displayColors.map((color, idx) => (
         <div key={idx} className="flex-1" style={{ backgroundColor: color }} />
       ))}

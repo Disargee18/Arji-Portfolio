@@ -2,10 +2,27 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-softwhite: #FAF9F5;
+  --color-tonedwhite: #EAE8E1;
+}
+
+:root {
+  --cursor-bg: #000000;
+  --cursor-border: #000000;
+}
+
+.dark {
+  --cursor-bg: #EAE8E1;
+  --cursor-border: #EAE8E1;
+}
+
 body {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
-  background-color: #ffffff;
+  background-color: #FAF9F5;
   color: #000000;
   overflow-x: hidden;
   cursor: none;

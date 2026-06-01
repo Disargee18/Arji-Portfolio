@@ -13,49 +13,36 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
   return (
     <section
       id="about-me-section"
-      className="w-full min-h-screen border-t-[3px] border-b-[3px] border-black flex flex-col bg-white select-none justify-between"
+      className="w-full min-h-screen border-t-[3px] border-black dark:border-tonedwhite flex flex-col bg-softwhite dark:bg-[#111111] select-none justify-between"
     >
       {/* Top Bauhaus Color Strip */}
-      <div className="flex h-2 w-full">
+      <div className="flex h-4 w-full border-b-[3px] border-black dark:border-tonedwhite divide-x-[3px] divide-black dark:divide-tonedwhite select-none">
         <div className="flex-1 bg-[#FFD600]" />
         <div className="flex-1 bg-[#FF3B30]" />
         <div className="flex-1 bg-[#1E4DFF]" />
       </div>
 
-      {/* Top Header Navigation Bar */}
-      <div className="border-b-[3px] border-black px-6 md:px-10 py-3 flex items-center justify-between bg-white">
-        <div
-          onClick={onBackClick}
-          onMouseEnter={() => triggerHover(true)}
-          onMouseLeave={() => triggerHover(false)}
-          className="text-[11px] font-bold tracking-widest uppercase flex items-center gap-1.5 text-black cursor-none"
-        >
-          <i className="ti ti-arrow-left text-[13px]" aria-hidden="true" /> Home
-        </div>
-        <span className="text-[11px] font-bold tracking-widest uppercase text-[#aaa]">
-          01 — About Me
-        </span>
-      </div>
+
 
       {/* Main Content Layout */}
       <div className="flex flex-col flex-grow">
         {/* Yellow Left Header Block */}
-        <div className="bg-[#FFD600] border-b-[3px] border-black px-6 md:px-10 py-6 flex items-end justify-between select-none">
+        <div className="bg-[#FFD600] border-b-[3px] border-black dark:border-tonedwhite px-6 md:px-10 py-6 flex items-end justify-between select-none">
           <h2 className="text-[2.2rem] font-bold uppercase tracking-tight leading-none text-black">
             About Me
           </h2>
-          <small className="text-[10px] font-bold tracking-widest uppercase text-black/40">
+          <small className="text-[10px] font-bold tracking-widest uppercase text-black/40 dark:text-black/60">
             Argee / 2026
           </small>
         </div>
 
         {/* Interactive Help Hint */}
-        <div className="px-6 md:px-10 py-2.5 text-[10px] font-bold tracking-widest uppercase text-[#aaa] border-b-2 border-black flex items-center gap-1.5 bg-white">
+        <div className="px-6 md:px-10 py-2.5 text-[10px] font-bold tracking-widest uppercase text-[#aaa] dark:text-[#888] border-b-2 border-black dark:border-tonedwhite flex items-center gap-1.5 bg-softwhite dark:bg-[#111111]">
           <i className="ti ti-hand-click text-[13px]" aria-hidden="true" /> Tap a card to flip
         </div>
 
         {/* Flip Cards Grid (1 column on mobile, 2 columns on tablet, 3 columns on desktop) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full bg-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 bg-black dark:bg-tonedwhite gap-[2px] w-full border-b-2 border-black dark:border-tonedwhite">
           {/* Card 1: Who I Am */}
           <FlipCard
             number="01"
@@ -65,11 +52,13 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
             backBg="bg-black"
             textColor="text-black"
             backTextColor="text-white"
+            numColor="text-black/40"
+            flipHintColor="text-black/35"
             onHoverChange={triggerHover}
-            borderClass="border-b-2 border-black sm:border-r-2 sm:border-b-2"
+            borderClass=""
             backContent={
               <p className="text-xs md:text-sm leading-relaxed text-left">
-                I'm Argee Paquibot, a 3rd year BSIT student at the University of Cebu Lapu-lapu and Mandaue.
+                Yo, I'm Arji—an aspiring software developer dedicated to engineering clean, high-performance web applications. I focus heavily on building interactive user experiences, backed by a strong ability to clearly articulate technical concepts to any audience.
               </p>
             }
           />
@@ -79,14 +68,14 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
             number="02"
             title="Aspiration"
             subtitle="Full-Stack Dev"
-            frontBg="bg-[#FF3B30]"
+            frontBg="bg-white"
             backBg="bg-[#FF3B30]"
-            textColor="text-white"
+            textColor="text-black"
             backTextColor="text-white"
-            numColor="text-white/50"
-            flipHintColor="text-white/35"
+            numColor="text-black/40"
+            flipHintColor="text-black/35"
             onHoverChange={triggerHover}
-            borderClass="border-b-2 border-black sm:border-r-0 md:border-r-2 sm:border-b-2"
+            borderClass=""
             backContent={
               <p className="text-xs md:text-sm leading-relaxed text-left">
                 Become a full-stack developer that bridges the gap between technical logic and great ideas — translating vision into reality.
@@ -103,8 +92,10 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
             backBg="bg-black"
             textColor="text-black"
             backTextColor="text-white"
+            numColor="text-black/40"
+            flipHintColor="text-black/35"
             onHoverChange={triggerHover}
-            borderClass="border-b-2 border-black sm:border-r-2 md:border-r-0 sm:border-b-2"
+            borderClass=""
             backContent={
               <p className="text-xs md:text-sm leading-relaxed text-left">
                 Always daydreaming about the next big startup. Software is a lever for impact — and I'm building myself into the kind of developer who can pull it hard.
@@ -116,17 +107,18 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
           <FlipCard
             number="04"
             title="Tech Stack"
-            subtitle="8 Technologies"
-            frontBg="bg-[#FFD600]"
+            subtitle="15 Technologies"
+            frontBg="bg-white"
             backBg="bg-[#FFD600]"
             textColor="text-black"
             backTextColor="text-black"
-            numColor="text-black/30"
+            numColor="text-black/40"
+            flipHintColor="text-black/35"
             onHoverChange={triggerHover}
-            borderClass="border-b-2 border-black sm:border-r-0 md:border-r-2 sm:border-b-2 md:border-b-0"
+            borderClass=""
             backContent={
               <div className="flex flex-wrap gap-1.5 mt-1 justify-start">
-                {['Java', 'JavaScript', 'React', 'Python', 'PHP', 'Node.js', 'Supabase', 'PostgreSQL'].map((tech) => (
+                {['Java', 'JavaScript', 'React', 'Python', 'PHP', 'Node.js', 'Supabase', 'PostgreSQL', 'Vercel', 'Render', 'C#', 'Figma', 'TailWind', 'Git', 'REST APIs'].map((tech) => (
                   <span
                     key={tech}
                     className="text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 border-[2px] border-black bg-white/30"
@@ -143,14 +135,14 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
             number="05"
             title="Hobbies"
             subtitle="Beyond the screen"
-            frontBg="bg-[#1E4DFF]"
+            frontBg="bg-white"
             backBg="bg-[#1E4DFF]"
-            textColor="text-white"
+            textColor="text-black"
             backTextColor="text-white"
-            numColor="text-white/50"
-            flipHintColor="text-white/35"
+            numColor="text-black/40"
+            flipHintColor="text-black/35"
             onHoverChange={triggerHover}
-            borderClass="border-b-2 border-black sm:border-r-2 md:border-r-2 sm:border-b-0 md:border-b-0"
+            borderClass=""
             backContent={
               <div className="flex flex-col gap-3.5 text-left justify-center h-full">
                 <div className="flex items-center gap-2 text-xs md:text-sm">
@@ -170,8 +162,8 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
           />
 
           {/* Slot 6: "You can reach me out here" Contact Card */}
-          <div className="w-full h-[280px] bg-white flex flex-col justify-center items-center p-6 border-0 border-black sm:border-r-0 md:border-r-0 sm:border-b-0 md:border-b-0 select-none">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-[#aaa] mb-6 text-center select-none">
+          <div className="w-full h-[280px] bg-softwhite dark:bg-[#111111] flex flex-col justify-center items-center p-6 border-none select-none">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[#aaa] dark:text-[#888] mb-6 text-center select-none">
               you can reach me out here
             </h3>
 
@@ -182,7 +174,7 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
                 href="https://github.com/Disargee18"
                 target="_blank"
                 rel="noreferrer"
-                className="w-14 h-14 md:w-16 md:h-16 border-2 border-black hover:scale-105 active:scale-95 transition-transform overflow-hidden cursor-none shadow-none bg-white"
+                className="w-14 h-14 md:w-16 md:h-16 border-2 border-black dark:border-tonedwhite hover:scale-105 active:scale-95 transition-transform overflow-hidden cursor-none shadow-none bg-softwhite dark:bg-[#111111]"
                 onMouseEnter={() => triggerHover(true)}
                 onMouseLeave={() => triggerHover(false)}
               >
@@ -192,7 +184,7 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
               {/* Gmail */}
               <a
                 href="mailto:argee@gmail.com"
-                className="w-14 h-14 md:w-16 md:h-16 border-2 border-black hover:scale-105 active:scale-95 transition-transform overflow-hidden cursor-none shadow-none bg-white"
+                className="w-14 h-14 md:w-16 md:h-16 border-2 border-black dark:border-tonedwhite hover:scale-105 active:scale-95 transition-transform overflow-hidden cursor-none shadow-none bg-softwhite dark:bg-[#111111]"
                 onMouseEnter={() => triggerHover(true)}
                 onMouseLeave={() => triggerHover(false)}
               >
@@ -204,7 +196,7 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-14 h-14 md:w-16 md:h-16 border-2 border-black hover:scale-105 active:scale-95 transition-transform overflow-hidden cursor-none shadow-none bg-white"
+                className="w-14 h-14 md:w-16 md:h-16 border-2 border-black dark:border-tonedwhite hover:scale-105 active:scale-95 transition-transform overflow-hidden cursor-none shadow-none bg-softwhite dark:bg-[#111111]"
                 onMouseEnter={() => triggerHover(true)}
                 onMouseLeave={() => triggerHover(false)}
               >
@@ -217,12 +209,6 @@ const AboutMe = ({ onBackClick, onHoverChange }) => {
 
 
 
-      {/* Bottom Color Strip */}
-      <div className="flex h-2 w-full">
-        <div className="flex-1 bg-[#1E4DFF]" />
-        <div className="flex-1 bg-[#FF3B30]" />
-        <div className="flex-1 bg-[#FFD600]" />
-      </div>
     </section>
   );
 };

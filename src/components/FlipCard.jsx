@@ -34,17 +34,17 @@ const FlipCard = ({
         className={`relative w-full preserve-3d ${heightClass}`}
       >
         {/* Front Face */}
-        <div className={`absolute inset-0 backface-hidden flex flex-col justify-center p-[18px] select-none ${frontBg} ${textColor}`}>
-          <div className={`text-[10px] font-bold tracking-widest uppercase mb-1.5 ${numColor}`}>
+        <div className={`absolute inset-0 backface-hidden flex flex-col justify-center p-[18px] select-none ${frontBg} dark:bg-[#111111] ${textColor} dark:text-white`}>
+          <div className={`text-[10px] font-bold tracking-widest uppercase mb-1.5 ${numColor} dark:text-white/40`}>
             {number}
           </div>
           <div className="text-lg md:text-xl font-bold uppercase tracking-wider mb-1 leading-none">
             {title}
           </div>
-          <div className="text-[10px] font-medium tracking-wider uppercase opacity-50">
+          <div className="text-[10px] font-medium tracking-wider uppercase opacity-50 dark:opacity-60">
             {subtitle}
           </div>
-          <span className={`text-[9px] font-bold tracking-widest uppercase absolute bottom-2.5 right-3.5 ${flipHintColor}`}>
+          <span className={`text-[9px] font-bold tracking-widest uppercase absolute bottom-2.5 right-3.5 ${flipHintColor} dark:text-white/35`}>
             Flip →
           </span>
         </div>
